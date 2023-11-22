@@ -9,3 +9,4 @@ The credentials.json file is obtained from Google Cloud Console, which you can f
 
 I have plans on making it a useful project in the future, and hence will keep making contributions.
 
+I personally found [this video](https://www.youtube.com/watch?v=B2E82UPUnOY&t=1029s) helpful.
