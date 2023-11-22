@@ -1,0 +1,36 @@
+<!-- to show list of templates created by user -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <div class="title" style="display: inline-block; left: 0">
+            <h1>{% block title %}  Your Templates {% endblock %}</h1>
+        </div
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% for template_id, template_desc in messages.items() %}
+        <a href="{{ url_for('events', template_id=template_id) }}">  <!-- to lead you to the events contained within the template, refer using template_id-->
+            <br>
+            <br>
+            <div class="template_names" style="background-color: #adadad;">
+                <h3>{{ template_id }}</h3>
+                <p>{{ template_desc }}</p>
+                <a href="{{ url_for('added', template_id=template_id) }}">
+                    <button>Add to Google Calendar</button>
+                </a>
+                <br> 
+            </div>
+        </a>
+    {% endfor %}
+    <a href="{{ url_for('create_template')}}"> <!-- leads you to the form to create another template -->
+        <div class="create_temp" style="width: 100%; height: 100%; position: fixed; display: inline-block; margin-left: 1700px; right:1000; margin-bottom: 100px">
+            <div style="width: 120px; height: 120px; left: 0px; top: 00px; position: absolute; background: #2E1114; border-radius: 9999px"></div>
+            <div style="width: 10px; height: 70px; left: 55px; top: 25px; position: absolute; background: #D9D9D9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 2px"></div>
+            <div style="width: 10px; height: 70px; left: 25px; top: 65px; position: absolute; transform: rotate(-90deg); transform-origin: 0 0; background: #D9D9D9; border-radius: 2px"></div>
+        </div>
+        </a>
+{% endblock %}
